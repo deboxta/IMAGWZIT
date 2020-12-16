@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{e2963ebd-9bdc-49c7-99d0-7ad73d395f43}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>ProjetSFML1</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(SFML_ROOT)\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SFML_ROOT)\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(SFML_ROOT)\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SFML_ROOT)\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\Libraries\SFML-2.5.1\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-system-d.lib;sfml-window-d.lib;sfml-audio-d.lib;sfml-main-d.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>E:\Libraries\SFML-2.5.1\lib</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /d /y "E:\Libraries\SFML-2.5.1\bin\*.*" "..\Debug\"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\Libraries\SFML-2.5.1\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-system-d.lib;sfml-window-d.lib;sfml-audio-d.lib;sfml-main-d.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>E:\Libraries\SFML-2.5.1\lib</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /d /y "C:\LibrairiesProgrammation\SFML-2.5.0\bin\Release\*.*" "..\Release\"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Constants.h" />
+    <ClInclude Include="Crawler.h" />
+    <ClInclude Include="CreditScreen.h" />
+    <ClInclude Include="CustomButton.h" />
+    <ClInclude Include="Damageable.h" />
+    <ClInclude Include="Drone.h" />
+    <ClInclude Include="DronePickup.h" />
+    <ClInclude Include="EndScreen.h" />
+    <ClInclude Include="EnemyHandler.h" />
+    <ClInclude Include="EnemySquadronGenerator.h" />
+    <ClInclude Include="EnemyFactory.hpp" />
+    <ClInclude Include="EnemyStates.h" />
+    <ClInclude Include="Exit.h" />
+    <ClInclude Include="Flamethrower.h" />
+    <ClInclude Include="FollowerWeapon.h" />
+    <ClInclude Include="GameScreen.h" />
+    <ClInclude Include="Handgun.h" />
+    <ClInclude Include="HealPickup.h" />
+    <ClInclude Include="InstructionScreen.h" />
+    <ClInclude Include="IObserver.h" />
+    <ClInclude Include="Label.h" />
+    <ClInclude Include="LaserGun.h" />
+    <ClInclude Include="LaserProjectile.h" />
+    <ClInclude Include="Minigun.h" />
+    <ClInclude Include="MinigunProjectile.h" />
+    <ClInclude Include="Obstacle.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="CollisionCircle.h" />
+    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="Flame.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="Pickup.h" />
+    <ClInclude Include="PlayerCommand.hpp" />
+    <ClInclude Include="Projectile.h" />
+    <ClInclude Include="Phaser.h" />
+    <ClInclude Include="Rocket.h" />
+    <ClInclude Include="RocketLauncher.h" />
+    <ClInclude Include="Scatter.h" />
+    <ClInclude Include="Scattershot.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="Shield.h" />
+    <ClInclude Include="ShieldPickup.h" />
+    <ClInclude Include="Follower.h" />
+    <ClInclude Include="SlowBombPickup.h" />
+    <ClInclude Include="Subject.h" />
+    <ClInclude Include="Textbox.h" />
+    <ClInclude Include="TitleScreen.h" />
+    <ClInclude Include="Watcher.h" />
+    <ClInclude Include="Swarmling.h" />
+    <ClInclude Include="SwarmQueen.h" />
+    <ClInclude Include="Guardian.h" />
+    <ClInclude Include="WatcherProjectile.h" />
+    <ClInclude Include="WatcherWeapon.h" />
+    <ClInclude Include="Weapon.h" />
+    <ClInclude Include="WeaponType.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Crawler.cpp" />
+    <ClCompile Include="CreditScreen.cpp" />
+    <ClCompile Include="CustomButton.cpp" />
+    <ClCompile Include="Damageable.cpp" />
+    <ClCompile Include="Drone.cpp" />
+    <ClCompile Include="DronePickup.cpp" />
+    <ClCompile Include="EndScreen.cpp" />
+    <ClCompile Include="EnemyHandler.cpp" />
+    <ClCompile Include="EnemySquadronGenerator.cpp" />
+    <ClCompile Include="Exit.cpp" />
+    <ClCompile Include="Flamethrower.cpp" />
+    <ClCompile Include="FollowerWeapon.cpp" />
+    <ClCompile Include="GameScreen.cpp" />
+    <ClCompile Include="Handgun.cpp" />
+    <ClCompile Include="HealPickup.cpp" />
+    <ClCompile Include="InstructionScreen.cpp" />
+    <ClCompile Include="IObserver.cpp" />
+    <ClCompile Include="Label.cpp" />
+    <ClCompile Include="LaserGun.cpp" />
+    <ClCompile Include="LaserProjectile.cpp" />
+    <ClCompile Include="Minigun.cpp" />
+    <ClCompile Include="MinigunProjectile.cpp" />
+    <ClCompile Include="Obstacle.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="CollisionCircle.cpp" />
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="Flame.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Pickup.cpp" />
+    <ClCompile Include="Projectile.cpp" />
+    <ClCompile Include="Phaser.cpp" />
+    <ClCompile Include="Rocket.cpp" />
+    <ClCompile Include="RocketLauncher.cpp" />
+    <ClCompile Include="Scatter.cpp" />
+    <ClCompile Include="Scattershot.cpp" />
+    <ClCompile Include="Shield.cpp" />
+    <ClCompile Include="ShieldPickup.cpp" />
+    <ClCompile Include="Follower.cpp" />
+    <ClCompile Include="SlowBombPickup.cpp" />
+    <ClCompile Include="Subject.cpp" />
+    <ClCompile Include="Textbox.cpp" />
+    <ClCompile Include="TitleScreen.cpp" />
+    <ClCompile Include="Watcher.cpp" />
+    <ClCompile Include="Swarmling.cpp" />
+    <ClCompile Include="SwarmQueen.cpp" />
+    <ClCompile Include="Guardian.cpp" />
+    <ClCompile Include="WatcherProjectile.cpp" />
+    <ClCompile Include="WatcherWeapon.cpp" />
+    <ClCompile Include="Weapon.cpp" />
+    <ClCompile Include="WeaponType.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Fonts\Lady Radical 2.ttf" />
+    <Font Include="Fonts\segoepr.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Sprites\Art\BombBlue.png" />
+    <Image Include="Sprites\Art\BombGreen.png" />
+    <Image Include="Sprites\Art\BombRed.png" />
+    <Image Include="Sprites\Art\Drone.png" />
+    <Image Include="Sprites\Art\Follower4x.png" />
+    <Image Include="Sprites\Art\Guardian.png" />
+    <Image Include="Sprites\Art\Kid1.png" />
+    <Image Include="Sprites\Art\Kid2.png" />
+    <Image Include="Sprites\Art\Kid3.png" />
+    <Image Include="Sprites\Art\Player.png" />
+    <Image Include="Sprites\Art\Swarmling.png" />
+    <Image Include="Sprites\Art\SwarmQueen.png" />
+    <Image Include="Sprites\Art\SwarmQueenSheet3.png" />
+    <Image Include="Sprites\Art\Phaser3x.png" />
+    <Image Include="Sprites\Art\Watcher4x.png" />
+    <Image Include="Sprites\background_Jerom.jpg" />
+    <Image Include="Sprites\door.png" />
+    <Image Include="Sprites\grass.png" />
+    <Image Include="Sprites\Logos\DroneLogo.png" />
+    <Image Include="Sprites\Logos\FlameLogo.png" />
+    <Image Include="Sprites\Logos\Heal.png" />
+    <Image Include="Sprites\Logos\LaserLogo.png" />
+    <Image Include="Sprites\Logos\MinigunLogo.png" />
+    <Image Include="Sprites\Logos\MissileLogo.png" />
+    <Image Include="Sprites\Logos\ScatterLogo.png" />
+    <Image Include="Sprites\Logos\ShieldLogoBlue.png" />
+    <Image Include="Sprites\Logos\ShieldLogoGreen.png" />
+    <Image Include="Sprites\Logos\ShieldLogoRed.png" />
+    <Image Include="Sprites\obstacle2.png" />
+    <Image Include="Sprites\Projectiles\Bullet.png" />
+    <Image Include="Sprites\Projectiles\coin.png" />
+    <Image Include="Sprites\Projectiles\LaserSpritesheet20x.png" />
+    <Image Include="Sprites\Projectiles\LaserSpritesheet5x.png" />
+    <Image Include="Sprites\Projectiles\MinigunBullet.png" />
+    <Image Include="Sprites\Projectiles\Missile.png" />
+    <Image Include="Sprites\Projectiles\pokeball.png" />
+    <Image Include="Sprites\Projectiles\Scatter.png" />
+    <Image Include="Sprites\Projectiles\taser1.png" />
+    <Image Include="Sprites\Projectiles\taser2.png" />
+    <Image Include="Sprites\Projectiles\taser3.png" />
+    <Image Include="Sprites\Projectiles\WatcherProjectile3x.png" />
+    <Image Include="Sprites\tp3_end.png" />
+    <Image Include="Sprites\tp3_instructions.png" />
+    <Image Include="Sprites\tp3_title.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Sounds\everydaybro.wav" />
+    <Media Include="Sounds\nickcrompton.wav" />
+    <Media Include="Sounds\WeaponPickup\deadrat.wav" />
+    <Media Include="Sounds\WeaponPickup\healthhapiness.wav" />
+    <Media Include="Sounds\WeaponPickup\ichooseyou.wav" />
+    <Media Include="Sounds\WeaponPickup\imvegannow.wav" />
+    <Media Include="Sounds\WeaponPickup\respect.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TP3Algo\TP3Algo.vcxproj">
+      <Project>{b7a85a08-8a5e-48b9-8945-8e989e0951cb}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

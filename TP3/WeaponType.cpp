@@ -1,0 +1,6 @@
+﻿enum WeaponType
+{
+	DEFAULT,
+	ROCKETLAUNCHER,
+	FLAMETHROWER
+};
